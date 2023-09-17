@@ -39,8 +39,6 @@ plt.ylabel('x2')
 plt.legend()
 plt.grid(True)
 
-plt.show()
-
 res = linprog(c, A_ub=A, b_ub=b, bounds=[x0_bounds, x1_bounds], method='simplex')
 
 max_x1 = res.x[0]
@@ -48,3 +46,4 @@ max_x2 = res.x[1]
 max_z = -res.fun  # Меняем знак, так как ищем максимум
 
 print(f"Максимальное значение целевой функции: {max_z:.2f} при x1 = {max_x1:.2f}, x2 = {max_x2:.2f}")
+plt.show()
